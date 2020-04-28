@@ -45,7 +45,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/car%20(config-e).jpg)
 - Dataset: LSUN Cat
-- Resolution: 512x384
+- Resolution: 512x384 config: e
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-car-config-e.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
@@ -57,7 +57,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/car%20(config-f).jpg)
 - Dataset: LSUN Cat
-- Resolution: 512x384
+- Resolution: 512x384 config: f
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-car-config-f.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
@@ -69,7 +69,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/cat.jpg)
 - Dataset: LSUN Cat
-- Resolution: 256x256
+- Resolution: 256x256 config: f
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-cat-config-f.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
@@ -81,7 +81,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/church.jpg)
 - Dataset: LSUN Church
-- Resolution: 256x256
+- Resolution: 256x256 config: f
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-church-config-f.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
@@ -93,7 +93,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/FFHQ%20(config-e).jpg)
 - Dataset: FFHQ
-- Resolution: 1024x1024
+- Resolution: 1024x1024 config: e
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-ffhq-config-e.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
@@ -105,7 +105,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/FFHQ%20(config-f).jpg)
 - Dataset: FFHQ
-- Resolution: 1024x1024
+- Resolution: 1024x1024 config: f
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-ffhq-config-f.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
@@ -117,7 +117,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/horse.jpg)
 - Dataset: LSUN Horse
-- Resolution: 256x256
+- Resolution: 256x256 config: f
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-horse-config-f.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
@@ -129,7 +129,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/Imagenet.jpg)
 - Dataset: Image net
-- Resolution: 512x512
+- Resolution: 512x512 config: Unknown
 - Author: [Shawn Presser]()
 - [Download link](https://battle.shawwn.com/sdc/stylegan2-imagenet-512/model.ckpt-533504.pkl)
 - StyleGAN2 implementation: Unknown- Notes: Trained using TPUs
@@ -141,7 +141,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/WikiArt.jpg)
 - Dataset: WikiArt
-- Resolution: Unknown
+- Resolution: Unknown config: Unknown
 - Author: [Peter Baylies](https://twitter.com/pbaylies)
 - [Download link](https://archive.org/download/wikiart-stylegan2-conditional-model/network-snapshot-012052.pkl)
 - StyleGAN2 implementation: https://github.com/pbaylies/stylegan2- Notes: Conditional
@@ -153,7 +153,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/Anime%20portraits.jpg)
 - Dataset: Danboru
-- Resolution: 512x512
+- Resolution: 512x512 config: f
 - Author: [Aaron Gokaslan](https://skylion007.github.io/)
 - [Download link](https://mega.nz/#!PeIi2ayb!xoRtjTXyXuvgDxSsSMn-cOh-Zux9493zqdxwVMaAzp4)
 - StyleGAN2 implementation: Unknown
@@ -165,7 +165,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/microscope%20images.jpg)
 - Dataset: Unknown
-- Resolution: 1024x1024
+- Resolution: 1024x1024 config: Unknown
 - Author: [Michael Friesen](https://twitter.com/MichaelFriese10)
 - [Download link](https://mega.nz/#!PbgzWTZT!JbVpqgMU7AOg-sQUoG1BDepuwKtgAsLgjd4YwlTXlpc)
 - StyleGAN2 implementation: Unknown
@@ -177,7 +177,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/wildlife.jpg)
 - Dataset: Unknown
-- Resolution: Unknown
+- Resolution: Unknown config: Unknown
 - Author: [Michael Friesen](https://twitter.com/MichaelFriese10)
 - [Download link](https://mega.nz/#!rewlECYI!YxVxdCKoeauEbiPKt92otVVHZBOiI-KkZMr0cvKHBdg)
 - StyleGAN2 implementation: Unknown
@@ -189,7 +189,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/modern%20art.jpg)
 - Dataset: Unknown
-- Resolution: Unknown
+- Resolution: Unknown config: Unknown
 - Author: [Michael Friesen](https://twitter.com/MichaelFriese10)
 - [Download link](https://mega.nz/#!TCgSVCTa!ZmcV381soxyqiQyHO4p60F5ogoHcaO1PqDF9ZuiHVQw)
 - StyleGAN2 implementation: Unknown

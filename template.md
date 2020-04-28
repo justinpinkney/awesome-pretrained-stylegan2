@@ -21,7 +21,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ![](images/{{ model.name | replace(" ", "%20")}}.jpg)
 - Dataset: {{ model.dataset }}
-- Resolution: {{ model.resolution }}
+- Resolution: {{ model.resolution }} config: {{ model.config }}
 - Author: [{{ model.author }}]({{ model.author_url }})
 - [Download link]({{ model.download_url }})
 - StyleGAN2 implementation: {{ model.implementation }}{% if model.Notes %}- Notes: {{ model.Notes }}{% endif %}
