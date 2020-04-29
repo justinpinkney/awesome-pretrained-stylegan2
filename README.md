@@ -18,6 +18,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/microscope%20images.jpg)](#microscope-images)
 [![](images/thumbs/wildlife.jpg)](#wildlife)
 [![](images/thumbs/modern%20art.jpg)](#modern-art)
+[![](images/thumbs/trypophobia.jpg)](#trypophobia)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -38,6 +39,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [microscope images](#microscope-images)
     - [wildlife](#wildlife)
     - [modern art](#modern-art)
+    - [trypophobia](#trypophobia)
 - [Contributing](#contributing)
 
 
@@ -195,6 +197,18 @@ If you have a publically accessible model which you know of, or would like to sh
 - StyleGAN2 implementation: Unknown
 - Licence: Unknown
 - [Source](https://twitter.com/MichaelFriese10/status/1213697331427545088?s=20)
+
+
+## trypophobia
+
+![](images/trypophobia.jpg)
+- Dataset: https://drive.google.com/file/d/1u_fLHmO6JuJlBTQIKRGgl4PeBKbBu9GJ/view
+- Resolution: 1024x1024 config: f
+- Author: [ Sid Black]( https://twitter.com/realmeatyhuman)
+- [Download link](https://drive.google.com/uc?id=12yYXZymadSIj74Yue1Q7RrlbIqrXggo3)
+- StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
+- Licence: Nvidia Source Code License-NC
+- [Source]( https://twitter.com/realmeatyhuman/status/1255240894049067008)
 
 
 
