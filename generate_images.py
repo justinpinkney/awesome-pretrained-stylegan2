@@ -60,7 +60,7 @@ def download(url, dest_path):
 
     dest_path.mkdir()
     if 'drive.google.com' in url:
-        downloaded_file = gdown.download(url, output=dest_path)
+        downloaded_file = gdown.download(url, output=str(dest_path/'model_file'))
     elif 'mega.nz' in url:
         mega = Mega()
         m = mega.login()
