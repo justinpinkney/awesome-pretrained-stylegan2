@@ -19,6 +19,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/wildlife.jpg)](#wildlife)
 [![](images/thumbs/modern%20art.jpg)](#modern-art)
 [![](images/thumbs/trypophobia.jpg)](#trypophobia)
+[![](images/thumbs/Abstract%20art.jpg)](#Abstract-art)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -40,6 +41,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [wildlife](#wildlife)
     - [modern art](#modern-art)
     - [trypophobia](#trypophobia)
+    - [Abstract art](#Abstract-art)
 - [Contributing](#contributing)
 
 
@@ -134,7 +136,8 @@ If you have a publically accessible model which you know of, or would like to sh
 - Resolution: 512x512 config: Unknown
 - Author: [Shawn Presser]()
 - [Download link](https://battle.shawwn.com/sdc/stylegan2-imagenet-512/model.ckpt-533504.pkl)
-- StyleGAN2 implementation: Unknown- Notes: Trained using TPUs
+- StyleGAN2 implementation: Unknown
+- Notes: Trained using TPUs
 - Licence: Unknown
 - [Source](https://twitter.com/theshawwn/status/1244081581347598341)
 
@@ -146,7 +149,8 @@ If you have a publically accessible model which you know of, or would like to sh
 - Resolution: Unknown config: Unknown
 - Author: [Peter Baylies](https://twitter.com/pbaylies)
 - [Download link](https://archive.org/download/wikiart-stylegan2-conditional-model/network-snapshot-012052.pkl)
-- StyleGAN2 implementation: https://github.com/pbaylies/stylegan2- Notes: Conditional
+- StyleGAN2 implementation: https://github.com/pbaylies/stylegan2
+- Notes: Conditional
 - Licence: Unknown
 - [Source]()
 
@@ -209,6 +213,19 @@ If you have a publically accessible model which you know of, or would like to sh
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
 - Licence: Nvidia Source Code License-NC
 - [Source]( https://twitter.com/realmeatyhuman/status/1255240894049067008)
+
+
+## Abstract art
+
+![](images/Abstract%20art.jpg)
+- Dataset: Frea Buckler artwork
+- Resolution: 1024x1024 config: f
+- Author: [Derrick Schultz](https://twitter.com/dvsch)
+- [Download link](https://drive.google.com/uc?id=1YzZemZAp7BVW701_BZ7uabJWJJaS2g7v)
+- StyleGAN2 implementation: RunwayML
+- Notes: Based on Frea Buckler’s artwork from her Instagram account (purposefully undertrained to be abstract and not infringe on the artist’s own work)
+- Licence: Unknown
+- [Source](https://twitter.com/dvsch/status/1255885874560225284?s=20)
 
 
 
