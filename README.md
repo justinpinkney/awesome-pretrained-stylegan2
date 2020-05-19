@@ -9,8 +9,9 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/car%20(config-f).jpg)](#car-(config-f))
 [![](images/thumbs/cat.jpg)](#cat)
 [![](images/thumbs/church.jpg)](#church)
-[![](images/thumbs/FFHQ%20(config-e).jpg)](#FFHQ-(config-e))
-[![](images/thumbs/FFHQ%20(config-f).jpg)](#FFHQ-(config-f))
+[![](images/thumbs/faces%20(FFHQ%20config-e).jpg)](#faces-(FFHQ-config-e))
+[![](images/thumbs/faces%20(FFHQ%20config-e%20256x256).jpg)](#faces-(FFHQ-config-e-256x256))
+[![](images/thumbs/faces%20(FFHQ%20config-f).jpg)](#faces-(FFHQ-config-f))
 [![](images/thumbs/horse.jpg)](#horse)
 [![](images/thumbs/Imagenet.jpg)](#Imagenet)
 [![](images/thumbs/WikiArt.jpg)](#WikiArt)
@@ -31,8 +32,9 @@ If you have a publically accessible model which you know of, or would like to sh
     - [car (config-f)](#car-(config-f))
     - [cat](#cat)
     - [church](#church)
-    - [FFHQ (config-e)](#FFHQ-(config-e))
-    - [FFHQ (config-f)](#FFHQ-(config-f))
+    - [faces (FFHQ config-e)](#faces-(FFHQ-config-e))
+    - [faces (FFHQ config-e 256x256)](#faces-(FFHQ-config-e-256x256))
+    - [faces (FFHQ config-f)](#faces-(FFHQ-config-f))
     - [horse](#horse)
     - [Imagenet](#Imagenet)
     - [WikiArt](#WikiArt)
@@ -93,9 +95,9 @@ If you have a publically accessible model which you know of, or would like to sh
 - [Source](https://github.com/NVlabs/stylegan2)
 
 
-## FFHQ (config-e)
+## faces (FFHQ config-e)
 
-![](images/FFHQ%20(config-e).jpg)
+![](images/faces%20(FFHQ%20config-e).jpg)
 - Dataset: FFHQ
 - Resolution: 1024x1024 config: e
 - Author: [NVIDIA]()
@@ -105,9 +107,22 @@ If you have a publically accessible model which you know of, or would like to sh
 - [Source](https://github.com/NVlabs/stylegan2)
 
 
-## FFHQ (config-f)
+## faces (FFHQ config-e 256x256)
 
-![](images/FFHQ%20(config-f).jpg)
+![](images/faces%20(FFHQ%20config-e%20256x256).jpg)
+- Dataset: FFHQ
+- Resolution: 256x256 config: e
+- Author: [Justin Pinkney](http://justinpinkney.com/)
+- [Download link](https://drive.google.com/uc?id=1BUL-RIzXC7Bpnz2cn230CbA4eT7_Etp0)
+- StyleGAN2 implementation: https://github.com/justinpinkney/awesome-pretrained-stylegan2/issues/2
+- Notes: Trained to FID 11.2 from scratch for 3810 kimg
+- Licence: CC BY-NC-SA 4.0
+- [Source](https://github.com/justinpinkney/stylegan2)
+
+
+## faces (FFHQ config-f)
+
+![](images/faces%20(FFHQ%20config-f).jpg)
 - Dataset: FFHQ
 - Resolution: 1024x1024 config: f
 - Author: [NVIDIA]()
