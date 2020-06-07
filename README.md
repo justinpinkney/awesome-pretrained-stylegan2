@@ -12,6 +12,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/faces%20(FFHQ%20config-e).jpg)](#faces-(FFHQ-config-e))
 [![](images/thumbs/faces%20(FFHQ%20config-e%20256x256).jpg)](#faces-(FFHQ-config-e-256x256))
 [![](images/thumbs/faces%20(FFHQ%20config-f).jpg)](#faces-(FFHQ-config-f))
+[![](images/thumbs/faces%20(FFHQ%20config-f%20512x512).jpg)](#faces-(FFHQ-config-f-512x512))
 [![](images/thumbs/horse.jpg)](#horse)
 [![](images/thumbs/Imagenet.jpg)](#Imagenet)
 [![](images/thumbs/WikiArt.jpg)](#WikiArt)
@@ -35,6 +36,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [faces (FFHQ config-e)](#faces-(FFHQ-config-e))
     - [faces (FFHQ config-e 256x256)](#faces-(FFHQ-config-e-256x256))
     - [faces (FFHQ config-f)](#faces-(FFHQ-config-f))
+    - [faces (FFHQ config-f 512x512)](#faces-(FFHQ-config-f-512x512))
     - [horse](#horse)
     - [Imagenet](#Imagenet)
     - [WikiArt](#WikiArt)
@@ -130,6 +132,18 @@ If you have a publically accessible model which you know of, or would like to sh
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
 - Licence: Nvidia Source Code License-NC
 - [Source](https://github.com/NVlabs/stylegan2)
+
+
+## faces (FFHQ config-f 512x512)
+
+![](images/faces%20(FFHQ%20config-f%20512x512).jpg)
+- Dataset: FFHQ
+- Resolution: 512x512 config: f
+- Author: [aydao](https://twitter.com/AydaoGMan)
+- [Download link](https://mega.nz/#!eQdHkShY!8wyNKs343L7YUjwXlEg3cWjqK2g2EAIdYz5xbkPy3ng)
+- StyleGAN2 implementation: 
+- Licence: Public Domain
+- [Source](https://twitter.com/AydaoGMan/status/1269689136019116032?s=20)
 
 
 ## horse
