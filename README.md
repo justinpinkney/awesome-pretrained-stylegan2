@@ -5,14 +5,14 @@ A collection of pre-trained [StyleGAN2](https://github.com/NVlabs/stylegan2) mod
 _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) for pretrained models for StyleGAN 1_
 
 
-[![](images/thumbs/car%20(config-e).jpg)](#car-(config-e))
-[![](images/thumbs/car%20(config-f).jpg)](#car-(config-f))
+[![](images/thumbs/car%20(config-e).jpg)](#car-config-e)
+[![](images/thumbs/car%20(config-f).jpg)](#car-config-f)
 [![](images/thumbs/cat.jpg)](#cat)
 [![](images/thumbs/church.jpg)](#church)
-[![](images/thumbs/faces%20(FFHQ%20config-e).jpg)](#faces-(FFHQ-config-e))
-[![](images/thumbs/faces%20(FFHQ%20config-e%20256x256).jpg)](#faces-(FFHQ-config-e-256x256))
-[![](images/thumbs/faces%20(FFHQ%20config-f).jpg)](#faces-(FFHQ-config-f))
-[![](images/thumbs/faces%20(FFHQ%20config-f%20512x512).jpg)](#faces-(FFHQ-config-f-512x512))
+[![](images/thumbs/faces%20(FFHQ%20config-e).jpg)](#faces-FFHQ-config-e)
+[![](images/thumbs/faces%20(FFHQ%20config-e%20256x256).jpg)](#faces-FFHQ-config-e-256x256)
+[![](images/thumbs/faces%20(FFHQ%20config-f).jpg)](#faces-FFHQ-config-f)
+[![](images/thumbs/faces%20(FFHQ%20config-f%20512x512).jpg)](#faces-FFHQ-config-f-512x512)
 [![](images/thumbs/horse.jpg)](#horse)
 [![](images/thumbs/Imagenet.jpg)](#Imagenet)
 [![](images/thumbs/WikiArt.jpg)](#WikiArt)
@@ -29,14 +29,14 @@ If you have a publically accessible model which you know of, or would like to sh
 
 - Models
 
-    - [car (config-e)](#car-(config-e))
-    - [car (config-f)](#car-(config-f))
+    - [car (config-e)](#car-config-e)
+    - [car (config-f)](#car-config-f)
     - [cat](#cat)
     - [church](#church)
-    - [faces (FFHQ config-e)](#faces-(FFHQ-config-e))
-    - [faces (FFHQ config-e 256x256)](#faces-(FFHQ-config-e-256x256))
-    - [faces (FFHQ config-f)](#faces-(FFHQ-config-f))
-    - [faces (FFHQ config-f 512x512)](#faces-(FFHQ-config-f-512x512))
+    - [faces (FFHQ config-e)](#faces-FFHQ-config-e)
+    - [faces (FFHQ config-e 256x256)](#faces-FFHQ-config-e-256x256)
+    - [faces (FFHQ config-f)](#faces-FFHQ-config-f)
+    - [faces (FFHQ config-f 512x512)](#faces-FFHQ-config-f-512x512)
     - [horse](#horse)
     - [Imagenet](#Imagenet)
     - [WikiArt](#WikiArt)
