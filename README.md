@@ -22,6 +22,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/modern%20art.jpg)](#modern-art)
 [![](images/thumbs/trypophobia.jpg)](#trypophobia)
 [![](images/thumbs/Abstract%20art.jpg)](#Abstract-art)
+[![](images/thumbs/Maps.jpg)](#Maps)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -46,6 +47,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [modern art](#modern-art)
     - [trypophobia](#trypophobia)
     - [Abstract art](#Abstract-art)
+    - [Maps](#Maps)
 - [Contributing](#contributing)
 
 
@@ -255,6 +257,18 @@ If you have a publically accessible model which you know of, or would like to sh
 - Notes: Based on Frea Buckler’s artwork from her Instagram account (purposefully undertrained to be abstract and not infringe on the artist’s own work)
 - Licence: Unknown
 - [Source](https://twitter.com/dvsch/status/1255885874560225284?s=20)
+
+
+## Maps
+
+![](images/Maps.jpg)
+- Dataset: Maps
+- Resolution: 1024x1024 config: f
+- Author: [Topi Tjukanov](https://tjukanov.org/)
+- [Download link](https://archive.org/download/mapdreamer/mapdreamer.pkl)
+- StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
+- Licence: Unknown
+- [Source](https://medium.com/@tjukanov/mapdreamer-ai-cartography-4f2f6a40ef55)
 
 
 
