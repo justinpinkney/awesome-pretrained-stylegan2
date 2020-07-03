@@ -18,9 +18,10 @@ from PIL import Image
 import shutil
 
 images_dir = Path('images')
+movies_dir = Path('movies')
 models_dir = Path('models')
 
-for directory in (images_dir, models_dir):
+for directory in (images_dir, models_dir, movies_dir):
     directory.mkdir(exist_ok=True)
 
 def run_network(pkl_path, output_dir, clean_up=False):
@@ -36,6 +37,39 @@ def run_network(pkl_path, output_dir, clean_up=False):
             '--seeds', seeds,
             '--result-dir', working_dir + '/' + str(output_dir),
                 ]
+
+    base =['docker', 
+                    'run',
+                    '-t',
+                    '--rm',
+                    '--net', 'host',
+                    '--gpus', 'all',
+                    '-v', '/home/justin/code/awesome-pretrained-stylegan2:/working',
+                    image_name,
+                    ]
+    base.extend(cmd)
+    subprocess.run(base)
+
+
+def run_noise_loop(pkl_path, output_dir, clean_up=False):
+    working_dir = '/working'
+    image_name = 'awesome-stylegan2-dv'
+    seed = '0'
+
+
+    if clean_up:
+        cmd = ['rm', '-rf', working_dir + '/' + str(output_dir),]
+    else:
+        cmd = ['python', 'run_generator.py', 
+                'generate-latent-walk', 
+                '--network', working_dir + '/' + str(pkl_path),
+                '--walk-type', 'noiseloop',
+                '--frames', '300',
+                '--seeds', '0',
+                '--truncation-psi', '0.5',
+                '--diameter', '1.0',
+                '--start_seed', seed,
+                '--result-dir', working_dir + '/' + str(output_dir),]
 
     base =['docker', 
                     'run',
@@ -79,6 +113,7 @@ def download(url, dest_path):
         with lzma.open(downloaded_file, 'rb') as in_file:
             with open(pkl_file, 'wb') as out:
                 out.write(in_file.read())
+        downloaded_file.unlink()
     else:
         pkl_file = dest_path/downloaded_file.name
         downloaded_file.replace(pkl_file)
@@ -97,6 +132,18 @@ def draw_figure(results_dir, filename, rows=3, out_size=256):
     
     canvas.save(filename)
 
+def make_movie(input_dir, output_file):
+   
+    cmd = ['ffmpeg',
+            '-r', '24',
+            '-i',  str(input_dir) + '/00000-generate-latent-walk/frame%05d.png',
+            '-vcodec', 'libx264',
+            '-pix_fmt', 'yuv420p',
+            '-vf', 'scale=256:256',
+            str(output_file)]
+
+    subprocess.run(cmd)
+
 if __name__ == "__main__":
 
     temp_outputs = Path('temp_outputs')
@@ -105,17 +152,23 @@ if __name__ == "__main__":
         reader = csv.DictReader(csvfile)
         for model in reader:
             image_name = images_dir/(model["name"] + '.jpg')
+            movie_name = movies_dir/(model["name"] + '.mp4')
             model_location = models_dir/model["name"]
 
-            if os.path.exists(image_name):
+            if not os.path.exists(image_name):
+                pickle_location = download(model['download_url'], model_location)
+
+                run_network(pickle_location, temp_outputs)
+                draw_figure(temp_outputs, image_name)
+                run_network(pickle_location, temp_outputs, clean_up=True)
+            else:
                 print(f'{image_name} already exists.')
-                continue
 
-            pickle_location = download(model['download_url'], model_location)
+            if not os.path.exists(movie_name):
+                pickle_location = str(list(model_location.glob('*'))[0])
+                run_noise_loop(pickle_location, temp_outputs)
+                make_movie(temp_outputs, movie_name)
+                run_noise_loop(pickle_location, temp_outputs, clean_up=True)
+            else:
+                print(f'{movie_name} already exists.')
 
-            #temp_outputs.mkdir()
-            run_network(pickle_location, temp_outputs)
-            draw_figure(temp_outputs, image_name)
-            run_network(pickle_location, temp_outputs, clean_up=True)
-            #shutil.rmtree(temp_outputs)
-            
