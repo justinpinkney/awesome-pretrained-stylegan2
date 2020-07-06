@@ -23,6 +23,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/trypophobia.jpg)](#trypophobia)
 [![](images/thumbs/Abstract%20art.jpg)](#Abstract-art)
 [![](images/thumbs/Maps.jpg)](#Maps)
+[![](images/thumbs/cakes.jpg)](#cakes)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -48,6 +49,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [trypophobia](#trypophobia)
     - [Abstract art](#Abstract-art)
     - [Maps](#Maps)
+    - [cakes](#cakes)
 - [Contributing](#contributing)
 
 
@@ -269,6 +271,19 @@ If you have a publically accessible model which you know of, or would like to sh
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
 - Licence: Unknown
 - [Source](https://medium.com/@tjukanov/mapdreamer-ai-cartography-4f2f6a40ef55)
+
+
+## cakes
+
+![](images/cakes.jpg)
+- Dataset: Internet scraped cakes
+- Resolution: 256x256 config: e
+- Author: [Justin Pinkney](https://www.justinpinkney.com)
+- [Download link](https://drive.google.com/uc?id=13dTNlKDlgcIsCaPxMqX7luYqOo-lwPwk)
+- StyleGAN2 implementation: https://github.com/justinpinkney/stylegan2
+- Notes: Trained from scratch to FID 13.6
+- Licence: CC BY-NC-SA 4.0
+- [Source](https://www.justinpinkney.com/cake-gan)
 
 
 
