@@ -30,8 +30,6 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/obama.jpg)](#obama)
 [![](images/thumbs/grumpy%20cat.jpg)](#grumpy-cat)
 [![](images/thumbs/panda.jpg)](#panda)
-[![](images/thumbs/cat%20(few%20shot).jpg)](#cat-few-shot)
-[![](images/thumbs/dog%20(few%20shot).jpg)](#dog-few-shot)
 [![](images/thumbs/fursona.jpg)](#fursona)
 [![](images/thumbs/my%20little%20pony.jpg)](#my-little-pony)
 
@@ -66,8 +64,6 @@ If you have a publically accessible model which you know of, or would like to sh
     - [obama](#obama)
     - [grumpy cat](#grumpy-cat)
     - [panda](#panda)
-    - [cat (few shot)](#cat-few-shot)
-    - [dog (few shot)](#dog-few-shot)
     - [fursona](#fursona)
     - [my little pony](#my-little-pony)
 - [Contributing](#contributing)
@@ -380,32 +376,6 @@ If you have a publically accessible model which you know of, or would like to sh
 - [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-100-shot-panda.pkl)
 - StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
 - Notes: Trained with DiffAugment, FID (5k) = 12.06
-- Licence: Unknown
-- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
-
-
-## cat (few shot)
-
-![](images/cat%20(few%20shot).jpg)
-- Dataset: [AnimalFace](https://vcla.stat.ucla.edu/people/zhangzhang-si/HiT/exp5.html)
-- Resolution: 256x256 config: f
-- Author: [mit-han-lab](https://hanlab.mit.edu/)
-- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-AnimalFace-cat.pkl)
-- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
-- Notes: Trained with DiffAugment, FID (5k) = 42.44
-- Licence: Unknown
-- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
-
-
-## dog (few shot)
-
-![](images/dog%20(few%20shot).jpg)
-- Dataset: [AnimalFace](https://vcla.stat.ucla.edu/people/zhangzhang-si/HiT/exp5.html)
-- Resolution: 256x256 config: f
-- Author: [mit-han-lab](https://hanlab.mit.edu/)
-- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-AnimalFace-dog.pkl)
-- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
-- Notes: Trained with DiffAugment, FID (5k) = 58.85
 - Licence: Unknown
 - [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
 

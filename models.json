@@ -325,32 +325,6 @@
     "Notes": "Trained with DiffAugment, FID (5k) = 12.06"
   },
   {
-    "name": "cat (few shot)",
-    "download_url": "https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-AnimalFace-cat.pkl",
-    "author": "mit-han-lab",
-    "author_url": "https://hanlab.mit.edu/",
-    "dataset": "[AnimalFace](https://vcla.stat.ucla.edu/people/zhangzhang-si/HiT/exp5.html)",
-    "source_url": "https://hanlab.mit.edu/projects/data-efficient-gans/",
-    "resolution": "256x256",
-    "config": "f",
-    "license": "Unknown",
-    "implementation": "https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2",
-    "Notes": "Trained with DiffAugment, FID (5k) = 42.44"
-  },
-  {
-    "name": "dog (few shot)",
-    "download_url": "https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-AnimalFace-dog.pkl",
-    "author": "mit-han-lab",
-    "author_url": "https://hanlab.mit.edu/",
-    "dataset": "[AnimalFace](https://vcla.stat.ucla.edu/people/zhangzhang-si/HiT/exp5.html)",
-    "source_url": "https://hanlab.mit.edu/projects/data-efficient-gans/",
-    "resolution": "256x256",
-    "config": "f",
-    "license": "Unknown",
-    "implementation": "https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2",
-    "Notes": "Trained with DiffAugment, FID (5k) = 58.85"
-  },
-  {
     "name": "fursona",
     "download_url": "https://thisfursonadoesnotexist.com/model/network-e621-r-512-3194880.pkl",
     "author": "arfa",
