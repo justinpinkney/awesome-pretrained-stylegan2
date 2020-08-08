@@ -24,6 +24,16 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/Abstract%20art.jpg)](#Abstract-art)
 [![](images/thumbs/Maps.jpg)](#Maps)
 [![](images/thumbs/cakes.jpg)](#cakes)
+[![](images/thumbs/CIFAR%2010.jpg)](#CIFAR-10)
+[![](images/thumbs/CIFAR%20100.jpg)](#CIFAR-100)
+[![](images/thumbs/faces%20(FFHQ%20slim%20256x256).jpg)](#faces-FFHQ-slim-256x256)
+[![](images/thumbs/obama.jpg)](#obama)
+[![](images/thumbs/grumpy%20cat.jpg)](#grumpy-cat)
+[![](images/thumbs/panda.jpg)](#panda)
+[![](images/thumbs/cat%20(few%20shot).jpg)](#cat-few-shot)
+[![](images/thumbs/dog%20(few%20shot).jpg)](#dog-few-shot)
+[![](images/thumbs/fursona.jpg)](#fursona)
+[![](images/thumbs/my%20little%20pony.jpg)](#my-little-pony)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -50,6 +60,16 @@ If you have a publically accessible model which you know of, or would like to sh
     - [Abstract art](#Abstract-art)
     - [Maps](#Maps)
     - [cakes](#cakes)
+    - [CIFAR 10](#CIFAR-10)
+    - [CIFAR 100](#CIFAR-100)
+    - [faces (FFHQ slim 256x256)](#faces-FFHQ-slim-256x256)
+    - [obama](#obama)
+    - [grumpy cat](#grumpy-cat)
+    - [panda](#panda)
+    - [cat (few shot)](#cat-few-shot)
+    - [dog (few shot)](#dog-few-shot)
+    - [fursona](#fursona)
+    - [my little pony](#my-little-pony)
 - [Contributing](#contributing)
 
 
@@ -284,6 +304,136 @@ If you have a publically accessible model which you know of, or would like to sh
 - Notes: Trained from scratch to FID 13.6
 - Licence: CC BY-NC-SA 4.0
 - [Source](https://www.justinpinkney.com/cake-gan)
+
+
+## CIFAR 10
+
+![](images/CIFAR%2010.jpg)
+- Dataset: CIFAR 10
+- Resolution: TBC config: see paper
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/DiffAugment-stylegan2-cifar10.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID (10k) = 9.89
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## CIFAR 100
+
+![](images/CIFAR%20100.jpg)
+- Dataset: CIFAR 100
+- Resolution: 256x256 config: see paper
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/DiffAugment-stylegan2-cifar100.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID (10k) = 15.22
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## faces (FFHQ slim 256x256)
+
+![](images/faces%20(FFHQ%20slim%20256x256).jpg)
+- Dataset: FFHQ
+- Resolution: 256x256 config: slim
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-ffhq.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID = 3.81
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## obama
+
+![](images/obama.jpg)
+- Dataset: 100 images of Barack Obama
+- Resolution: 256x256 config: f
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-100-shot-obama.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID (5k) = 46.87
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## grumpy cat
+
+![](images/grumpy%20cat.jpg)
+- Dataset: 100 images of Grumpy Cats
+- Resolution: 256x256 config: f
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-100-shot-grumpy_cat.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID (5k) = 27.08
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## panda
+
+![](images/panda.jpg)
+- Dataset: 100 images of pandas
+- Resolution: 256x256 config: f
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-100-shot-panda.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID (5k) = 12.06
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## cat (few shot)
+
+![](images/cat%20(few%20shot).jpg)
+- Dataset: [AnimalFace](https://vcla.stat.ucla.edu/people/zhangzhang-si/HiT/exp5.html)
+- Resolution: 256x256 config: f
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-AnimalFace-cat.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID (5k) = 42.44
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## dog (few shot)
+
+![](images/dog%20(few%20shot).jpg)
+- Dataset: [AnimalFace](https://vcla.stat.ucla.edu/people/zhangzhang-si/HiT/exp5.html)
+- Resolution: 256x256 config: f
+- Author: [mit-han-lab](https://hanlab.mit.edu/)
+- [Download link](https://hanlab.mit.edu/projects/data-efficient-gans/models/stylegan2-AnimalFace-dog.pkl)
+- StyleGAN2 implementation: https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2
+- Notes: Trained with DiffAugment, FID (5k) = 58.85
+- Licence: Unknown
+- [Source](https://hanlab.mit.edu/projects/data-efficient-gans/)
+
+
+## fursona
+
+![](images/fursona.jpg)
+- Dataset: ~55k SFW images from e621.net
+- Resolution: 256x256 config: TBC
+- Author: [arfa](https://twitter.com/arfafax)
+- [Download link](https://thisfursonadoesnotexist.com/model/network-e621-r-512-3194880.pkl)
+- StyleGAN2 implementation: Unknown
+- Notes: Trained using TPUs
+- Licence: Unknown
+- [Source](https://thisfursonadoesnotexist.com/)
+
+
+## my little pony
+
+![](images/my%20little%20pony.jpg)
+- Dataset: ~104k SFW images from Derpibooru
+- Resolution: 1024x1024 config: TBC
+- Author: [arfa](https://twitter.com/arfafax)
+- [Download link](https://thisponydoesnotexist.net/model/network-ponies-1024-151552.pkl)
+- StyleGAN2 implementation: Unknown
+- Notes: Trained using TPUs
+- Licence: Unknown
+- [Source](https://thisponydoesnotexist.net/)
 
 
 
