@@ -33,6 +33,6 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ## Contributing
 
-__TLDR: You can either edit the [models.csv](models.csv) file or fill out this [form](https://forms.gle/PE1iiTa5tNTdBFYN9).__
+__TLDR: You can either edit the [models.json](models.json) file or fill out this [form](https://forms.gle/PE1iiTa5tNTdBFYN9).__
 
-This readme is automatically generated using Jinja, please do not try and edit it directly. Information about the models is stored in `models.csv` please add your model to this file. Preview images are generated automatically and the process is used to test the link so please only edit the csv file.
+This readme is automatically generated using Jinja, please do not try and edit it directly. Information about the models is stored in `models.json` please add your model to this file. Preview images are generated automatically and the process is used to test the link so please only edit the json file.

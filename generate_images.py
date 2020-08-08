@@ -4,9 +4,9 @@
 # run container to generate 9 images
 # Compile images into montage
 
-import csv
+import json
 import os
-filename = 'models.csv'
+filename = 'models.json'
 import traceback
 import requests
 import gdown
@@ -101,8 +101,8 @@ if __name__ == "__main__":
 
     temp_outputs = Path('temp_outputs')
     
-    with open(filename) as csvfile:
-        reader = csv.DictReader(csvfile)
+    with open(filename) as model_file:
+        reader = json.load(model_file)
         for model in reader:
             image_name = images_dir/(model["name"] + '.jpg')
             model_location = models_dir/model["name"]
