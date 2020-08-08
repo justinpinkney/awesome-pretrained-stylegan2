@@ -8,7 +8,7 @@
     "source_url": "https://github.com/NVlabs/stylegan2",
     "resolution": "512x384",
     "config": "e",
-    "license": "Nvidia Source Code License-NCNvidia Source Code License-NC",
+    "license": "Nvidia Source Code License-NC",
     "implementation": "https://github.com/NVlabs/stylegan2",
     "Notes": ""
   },

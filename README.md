@@ -61,7 +61,7 @@ If you have a publically accessible model which you know of, or would like to sh
 - Author: [NVIDIA]()
 - [Download link](http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-car-config-e.pkl)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
-- Licence: Nvidia Source Code License-NCNvidia Source Code License-NC
+- Licence: Nvidia Source Code License-NC
 - [Source](https://github.com/NVlabs/stylegan2)
 
 
@@ -241,11 +241,11 @@ If you have a publically accessible model which you know of, or would like to sh
 ![](images/trypophobia.jpg)
 - Dataset: https://drive.google.com/file/d/1u_fLHmO6JuJlBTQIKRGgl4PeBKbBu9GJ/view
 - Resolution: 1024x1024 config: f
-- Author: [ Sid Black]( https://twitter.com/realmeatyhuman)
+- Author: [Sid Black](https://twitter.com/realmeatyhuman)
 - [Download link](https://drive.google.com/uc?id=12yYXZymadSIj74Yue1Q7RrlbIqrXggo3)
 - StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
 - Licence: Nvidia Source Code License-NC
-- [Source]( https://twitter.com/realmeatyhuman/status/1255240894049067008)
+- [Source](https://twitter.com/realmeatyhuman/status/1255240894049067008)
 
 
 ## Abstract art
@@ -289,6 +289,6 @@ If you have a publically accessible model which you know of, or would like to sh
 
 ## Contributing
 
-__TLDR: You can either edit the [models.csv](models.csv) file or fill out this [form](https://forms.gle/PE1iiTa5tNTdBFYN9).__
+__TLDR: You can either edit the [models.json](models.json) file or fill out this [form](https://forms.gle/PE1iiTa5tNTdBFYN9).__
 
-This readme is automatically generated using Jinja, please do not try and edit it directly. Information about the models is stored in `models.csv` please add your model to this file. Preview images are generated automatically and the process is used to test the link so please only edit the csv file.
+This readme is automatically generated using Jinja, please do not try and edit it directly. Information about the models is stored in `models.json` please add your model to this file. Preview images are generated automatically and the process is used to test the link so please only edit the json file.

@@ -1,4 +1,4 @@
-import csv
+import json
 import jinja2
 from PIL import Image
 import os
@@ -12,13 +12,13 @@ def make_thumbnail(filename):
     thumb = thumb.resize((128,128))
     thumb.save(f"images/thumbs/{filename}.jpg")
 
-model_file = "models.csv"
+model_file = "models.json"
 output_file = "README.md"
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
 template = env.get_template('template.md')
 
-with open(model_file) as csvfile:
-    reader = csv.DictReader(csvfile)
+with open(model_file) as jsonfile:
+    reader = json.load(jsonfile)
     models = list(reader)
 
 for model in models:
