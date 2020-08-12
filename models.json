@@ -349,5 +349,18 @@
     "license": "Unknown",
     "implementation": "Unknown",
     "Notes": "Trained using TPUs"
+  },
+  {
+    "name": "painting faces",
+    "download_url": "https://drive.google.com/uc?id=1H-MYFZqngF1R0whm4bc3fEoX7VvOWaDl",
+    "author": "AK",
+    "author_url": "https://twitter.com/ak92501",
+    "dataset": "MetFaces",
+    "source_url": "https://twitter.com/ak92501/status/1282466682267676675?s=20",
+    "resolution": "1024x1024",
+    "config": "f",
+    "license": "Unknown",
+    "implementation": "Unknown",
+    "Notes": ""
   }
 ]
