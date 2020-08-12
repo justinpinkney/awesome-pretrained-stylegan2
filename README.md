@@ -32,6 +32,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](images/thumbs/panda.jpg)](#panda)
 [![](images/thumbs/fursona.jpg)](#fursona)
 [![](images/thumbs/my%20little%20pony.jpg)](#my-little-pony)
+[![](images/thumbs/painting%20faces.jpg)](#painting-faces)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -66,6 +67,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [panda](#panda)
     - [fursona](#fursona)
     - [my little pony](#my-little-pony)
+    - [painting faces](#painting-faces)
 - [Contributing](#contributing)
 
 
@@ -404,6 +406,18 @@ If you have a publically accessible model which you know of, or would like to sh
 - Notes: Trained using TPUs
 - Licence: Unknown
 - [Source](https://thisponydoesnotexist.net/)
+
+
+## painting faces
+
+![](images/painting%20faces.jpg)
+- Dataset: MetFaces
+- Resolution: 1024x1024 config: f
+- Author: [AK](https://twitter.com/ak92501)
+- [Download link](https://drive.google.com/uc?id=1H-MYFZqngF1R0whm4bc3fEoX7VvOWaDl)
+- StyleGAN2 implementation: Unknown
+- Licence: Unknown
+- [Source](https://twitter.com/ak92501/status/1282466682267676675?s=20)
 
 
 
