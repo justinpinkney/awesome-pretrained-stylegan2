@@ -5,17 +5,20 @@
 # Compile images into montage
 
 import json
-import os
-filename = 'models.json'
-import traceback
-import requests
-import gdown
-from mega import Mega
-from pathlib import Path
 import lzma
-import subprocess
-from PIL import Image
+import math
+import os
 import shutil
+import subprocess
+import traceback
+from pathlib import Path
+
+import gdown
+import requests
+from mega import Mega
+from PIL import Image
+
+model_data_file = 'models.json'
 
 images_dir = Path('images')
 movies_dir = Path('movies')
@@ -24,20 +27,14 @@ models_dir = Path('models')
 for directory in (images_dir, models_dir, movies_dir):
     directory.mkdir(exist_ok=True)
 
-def run_network(pkl_path, output_dir, clean_up=False):
-    working_dir = '/working'
+working_dir = '/working'
+temp_outputs = Path('temp_outputs')
+truncation = str(0.75)
+
+def run_in_container(cmd_to_run):
+    """Run the requested command in the docker container"""
     image_name = 'awesome-stylegan2'
-    seeds = '0-8'
-    if clean_up:
-        cmd = ['rm', '-rf', working_dir + '/' + str(output_dir),]
-    else:
-        cmd = ['python', 'run_generator.py', 
-            'generate-images',
-            '--network', working_dir + '/' + str(pkl_path),
-            '--seeds', seeds,
-            '--result-dir', working_dir + '/' + str(output_dir),
-                ]
-
+    
     base =['docker', 
                     'run',
                     '-t',
@@ -47,42 +44,69 @@ def run_network(pkl_path, output_dir, clean_up=False):
                     '-v', '/home/justin/code/awesome-pretrained-stylegan2:/working',
                     image_name,
                     ]
-    base.extend(cmd)
+    base.extend(cmd_to_run)
     subprocess.run(base)
 
 
-def run_noise_loop(pkl_path, output_dir, clean_up=False):
-    working_dir = '/working'
-    image_name = 'awesome-stylegan2-dv'
-    seed = '0'
+def run_network(pkl_path, output_dir):
+    seeds = '0-11'
+    cmd = ['python', 'run_generator.py', 
+        'generate-images',
+        '--network', working_dir + '/' + str(pkl_path),
+        '--seeds', seeds,
+        '--truncation-psi', truncation,
+        '--result-dir', working_dir + '/' + str(output_dir),
+            ]
+    run_in_container(cmd)
+
+def run_noise_loop(pkl_path, output_dir):
+    cmd = ['python', 'grid_vid.py', 
+            working_dir + '/' + str(pkl_path),
+            '--truncation-psi', truncation, 
+            '--grid-size', '3', '3', 
+            '--duration-sec', '10', 
+            '--smoothing-sec', '1',
+            '--output-width', str(3*256),
+            '--mp4', working_dir + '/' + str(output_dir),]
+    run_in_container(cmd)
 
 
-    if clean_up:
-        cmd = ['rm', '-rf', working_dir + '/' + str(output_dir),]
+def run_style_mixing(pkl_path, output_dir, resolution):
+    row_seeds = '100-103'
+    col_seeds = '200-203'
+    if resolution:
+        top_style = int(math.log(resolution/4)/math.log(2))
     else:
-        cmd = ['python', 'run_generator.py', 
-                'generate-latent-walk', 
-                '--network', working_dir + '/' + str(pkl_path),
-                '--walk-type', 'noiseloop',
-                '--frames', '300',
-                '--seeds', '0',
-                '--truncation-psi', '0.5',
-                '--diameter', '1.0',
-                '--start_seed', seed,
-                '--result-dir', working_dir + '/' + str(output_dir),]
+        top_style = 8
+    styles = '0-' + str(top_style)
+    cmd = ['python', 'run_generator.py', 
+        'style-mixing-example',
+        '--network', working_dir + '/' + str(pkl_path),
+        '--row-seeds', row_seeds,
+        '--col-seeds', col_seeds,
+        '--col-styles', styles,
+        '--truncation-psi', truncation,
+        '--result-dir', working_dir + '/' + str(output_dir),
+            ]
+    run_in_container(cmd)
 
-    base =['docker', 
-                    'run',
-                    '-t',
-                    '--rm',
-                    '--net', 'host',
-                    '--gpus', 'all',
-                    '-v', '/home/justin/code/awesome-pretrained-stylegan2:/working',
-                    image_name,
-                    ]
-    base.extend(cmd)
-    subprocess.run(base)
 
+def clean_up(output_dir):
+    """Delete the requested directory in the container"""
+    cmd = ['rm', '-rf', working_dir + '/' + str(output_dir),]
+    run_in_container(cmd)
+    
+
+def parse_resolution(res):
+    """parse the resolution from string.
+    e.g. either 512x512 or Unknown"""
+    first_element = res.split("x")[0]
+    try:
+        resolution = int(first_element)
+    except ValueError:
+        resolution = None
+    
+    return resolution
 
 def download(url, dest_path):
     print(f'Downloading {dest_path} model')
@@ -132,26 +156,24 @@ def draw_figure(results_dir, filename, rows=3, out_size=256):
     
     canvas.save(filename)
 
-def make_movie(input_dir, output_file):
-   
-    cmd = ['ffmpeg',
-            '-r', '24',
-            '-i',  str(input_dir) + '/00000-generate-latent-walk/frame%05d.png',
-            '-vcodec', 'libx264',
-            '-pix_fmt', 'yuv420p',
-            '-vf', 'scale=256:256',
-            str(output_file)]
 
-    subprocess.run(cmd)
-
-if __name__ == "__main__":
-
-    temp_outputs = Path('temp_outputs')
+def check_resolution(results_dir, filename):
     
-    with open(filename) as model_file:
+    images = Path(results_dir).rglob('*.png')
+    image = Image.open(list(images)[0])
+    return image.size
+    
+def main(selected=None):
+    
+    with open(model_data_file) as model_file:
         reader = json.load(model_file)
         for model in reader:
+
+            if selected and not model["name"] == selected:
+                continue
+
             image_name = images_dir/(model["name"] + '.jpg')
+            mixing_name = images_dir/(model["name"] + '_mixing.jpg')
             movie_name = movies_dir/(model["name"] + '.mp4')
             model_location = models_dir/model["name"]
 
@@ -160,15 +182,38 @@ if __name__ == "__main__":
 
                 run_network(pickle_location, temp_outputs)
                 draw_figure(temp_outputs, image_name)
-                run_network(pickle_location, temp_outputs, clean_up=True)
+                clean_up(temp_outputs)
             else:
                 print(f'{image_name} already exists.')
 
+            if not os.path.exists(mixing_name):
+                pickle_location = str(list(model_location.glob('*'))[0])
+                resolution = parse_resolution(model["resolution"])
+                run_style_mixing(pickle_location, temp_outputs, resolution)
+                filename = Path(temp_outputs)/"00000-style-mixing-example/grid.png"
+                im = Image.open(filename)
+                im.save(mixing_name)
+                clean_up(temp_outputs)
+            else:
+                print(f'{mixing_name} already exists.')
+
             if not os.path.exists(movie_name):
                 pickle_location = str(list(model_location.glob('*'))[0])
-                run_noise_loop(pickle_location, temp_outputs)
-                make_movie(temp_outputs, movie_name)
-                run_noise_loop(pickle_location, temp_outputs, clean_up=True)
+                temp_movie = temp_outputs.with_suffix(".mp4")
+                run_noise_loop(pickle_location, temp_movie)
+                shutil.copyfile(temp_movie, movie_name)
+                clean_up(temp_outputs)
             else:
                 print(f'{movie_name} already exists.')
 
+import sys
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        selected = sys.argv[1]
+    else:
+        selected = None
+    try:
+        main(selected)
+    except Exception as e:
+        print(e)
+        clean_up(temp_outputs)
