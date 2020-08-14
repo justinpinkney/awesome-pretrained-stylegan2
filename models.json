@@ -70,11 +70,11 @@
     "author": "Justin Pinkney",
     "author_url": "http://justinpinkney.com/",
     "dataset": "FFHQ",
-    "source_url": "https://github.com/justinpinkney/stylegan2",
+    "source_url": "https://github.com/justinpinkney/awesome-pretrained-stylegan2/issues/2",
     "resolution": "256x256",
     "config": "e",
     "license": "CC BY-NC-SA 4.0",
-    "implementation": "https://github.com/justinpinkney/awesome-pretrained-stylegan2/issues/2",
+    "implementation": "https://github.com/justinpinkney/stylegan2",
     "Notes": "Trained to FID 11.2 from scratch for 3810 kimg"
   },
   {
@@ -362,5 +362,18 @@
     "license": "Unknown",
     "implementation": "Unknown",
     "Notes": ""
+  },
+  {
+    "name": "ukiyoe faces",
+    "download_url": "https://drive.google.com/uc?id=1_QysUKfed1-_x9e5off2WWJKp1yUcidu",
+    "author": "Justin Pinkney",
+    "author_url": "https://www.justinpinkney.com",
+    "dataset": "5000 faces aligned and detected from ukiyoe images",
+    "source_url": "",
+    "resolution": "256x256",
+    "config": "slim",
+    "license": "CC BY-NC-SA 4.0",
+    "implementation": "https://github.com/justinpinkney/data-efficient-gans/",
+    "Notes": "Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.74"
   }
 ]
