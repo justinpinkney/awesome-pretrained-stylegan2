@@ -10,6 +10,8 @@ import math
 import os
 import shutil
 import subprocess
+import sys
+import tempfile
 import traceback
 from pathlib import Path
 
@@ -20,11 +22,10 @@ from PIL import Image
 
 model_data_file = 'models.json'
 
-images_dir = Path('images')
-movies_dir = Path('movies')
+content_dir = Path('content')
 models_dir = Path('models')
 
-for directory in (images_dir, models_dir, movies_dir):
+for directory in (content_dir, models_dir):
     directory.mkdir(exist_ok=True)
 
 working_dir = '/working'
@@ -75,7 +76,7 @@ def run_style_mixing(pkl_path, output_dir, resolution):
     row_seeds = '100-103'
     col_seeds = '200-203'
     if resolution:
-        top_style = int(math.log(resolution/4)/math.log(2))
+        top_style = int(math.log(resolution[0]/16)/math.log(2))
     else:
         top_style = 8
     styles = '0-' + str(top_style)
@@ -100,55 +101,56 @@ def clean_up(output_dir):
 def parse_resolution(res):
     """parse the resolution from string.
     e.g. either 512x512 or Unknown"""
-    first_element = res.split("x")[0]
+    elements = res.split("x")
     try:
-        resolution = int(first_element)
+        resolution = [int(el) for el in elements]
     except ValueError:
         resolution = None
     
     return resolution
 
+
 def download(url, dest_path):
+    """Downloads a model file and saves to dest_path.
+    Can deal with normal urls and google drive and mega"""
     print(f'Downloading {dest_path} model')
     
     if dest_path.exists():
         print(f'{dest_path} already exists, skipping download')
-        pkl_file = list(dest_path.glob('*'))[0]
-        return pkl_file
+        return
+        
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        tmpdirname = Path(tmpdirname)
+        if 'drive.google.com' in url:
+            downloaded_file = gdown.download(url, output=str(tmpdirname/'model_file'))
+        elif 'mega.nz' in url:
+            mega = Mega()
+            m = mega.login()
+            downloaded_file = m.download_url(url, dest_path=str(tmpdirname))
+        else:
+            r = requests.get(url)
+            downloaded_file = 'downloaded.pkl'
+            with open(downloaded_file, 'wb') as f:
+                f.write(r.content)
 
-    dest_path.mkdir()
-    if 'drive.google.com' in url:
-        downloaded_file = gdown.download(url, output=str(dest_path/'model_file'))
-    elif 'mega.nz' in url:
-        mega = Mega()
-        m = mega.login()
-        downloaded_file = m.download_url(url, dest_path=str(dest_path))
-    else:
-        r = requests.get(url)
-        downloaded_file = 'downloaded.pkl'
-        with open(downloaded_file, 'wb') as f:
-            f.write(r.content)
+        downloaded_file = Path(downloaded_file)
 
-    downloaded_file = Path(downloaded_file)
+        if downloaded_file.suffix == ".xz":  
+            print(f'Downloaded file {downloaded_file} is .xz')
+            pkl_file = tmpdirname/downloaded_file.stem
+            with lzma.open(downloaded_file, 'rb') as in_file:
+                with open(pkl_file, 'wb') as out:
+                    out.write(in_file.read())
+            downloaded_file.unlink()
+            downloaded_file = pkl_file
 
-    if downloaded_file.suffix == ".xz":  
-        print(f'Downloaded file {downloaded_file} is .xz')
-        pkl_file = dest_path/downloaded_file.stem
-        with lzma.open(downloaded_file, 'rb') as in_file:
-            with open(pkl_file, 'wb') as out:
-                out.write(in_file.read())
-        downloaded_file.unlink()
-    else:
-        pkl_file = dest_path/downloaded_file.name
-        downloaded_file.replace(pkl_file)
+        shutil.copyfile(downloaded_file, dest_path)
 
-    return pkl_file
-
-def draw_figure(results_dir, filename, rows=3, out_size=256):
+def draw_figure(results_dir, filename, rows=4, cols=3, out_size=256):
     
-    canvas = Image.new('RGB', (out_size * rows, out_size*rows), 'white')
+    canvas = Image.new('RGB', (out_size * cols, out_size*rows), 'white')
     images = Path(results_dir).rglob('*.png')
-    for col in range(rows):
+    for col in range(cols):
         for row in range(rows):
             image = Image.open(next(images))
             image = image.resize((out_size, out_size), Image.ANTIALIAS)
@@ -157,7 +159,7 @@ def draw_figure(results_dir, filename, rows=3, out_size=256):
     canvas.save(filename)
 
 
-def check_resolution(results_dir, filename):
+def check_resolution(results_dir):
     
     images = Path(results_dir).rglob('*.png')
     image = Image.open(list(images)[0])
@@ -172,24 +174,30 @@ def main(selected=None):
             if selected and not model["name"] == selected:
                 continue
 
-            image_name = images_dir/(model["name"] + '.jpg')
-            mixing_name = images_dir/(model["name"] + '_mixing.jpg')
-            movie_name = movies_dir/(model["name"] + '.mp4')
-            model_location = models_dir/model["name"]
+            base_content_dir = content_dir/model["name"]
+            base_content_dir.mkdir(exist_ok=True)
+            image_name = base_content_dir/"samples.jpg"
+            mixing_name = base_content_dir/"mixing.jpg"
+            movie_name = base_content_dir/"interpolation.mp4"
+            model_location = models_dir/(model["name"] + ".pkl")
 
-            if not os.path.exists(image_name):
-                pickle_location = download(model['download_url'], model_location)
+            download(model['download_url'], model_location)
 
-                run_network(pickle_location, temp_outputs)
+            resolution = parse_resolution(model["resolution"])
+                
+            if not os.path.exists(image_name):    
+                run_network(model_location, temp_outputs)
                 draw_figure(temp_outputs, image_name)
+                generated_resolution = check_resolution(temp_outputs)
+                print(f"Found resolution {generated_resolution}")
+                if resolution and any(x != y for x, y in zip(resolution, generated_resolution)):
+                    raise ValueError(f"resolution was {generated_resolution} but label is {resolution}")
                 clean_up(temp_outputs)
             else:
                 print(f'{image_name} already exists.')
 
             if not os.path.exists(mixing_name):
-                pickle_location = str(list(model_location.glob('*'))[0])
-                resolution = parse_resolution(model["resolution"])
-                run_style_mixing(pickle_location, temp_outputs, resolution)
+                run_style_mixing(model_location, temp_outputs, resolution)
                 filename = Path(temp_outputs)/"00000-style-mixing-example/grid.png"
                 im = Image.open(filename)
                 im.save(mixing_name)
@@ -198,15 +206,13 @@ def main(selected=None):
                 print(f'{mixing_name} already exists.')
 
             if not os.path.exists(movie_name):
-                pickle_location = str(list(model_location.glob('*'))[0])
                 temp_movie = temp_outputs.with_suffix(".mp4")
-                run_noise_loop(pickle_location, temp_movie)
+                run_noise_loop(model_location, temp_movie)
                 shutil.copyfile(temp_movie, movie_name)
                 clean_up(temp_outputs)
             else:
                 print(f'{movie_name} already exists.')
 
-import sys
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         selected = sys.argv[1]
@@ -214,6 +220,6 @@ if __name__ == "__main__":
         selected = None
     try:
         main(selected)
-    except Exception as e:
-        print(e)
+    except Exception as err:
+        traceback.print_tb(err.__traceback__)
         clean_up(temp_outputs)
