@@ -4,13 +4,13 @@ from PIL import Image
 import os
 
 def make_thumbnail(filename):
-    image_name = f"images/{filename}.jpg"
+    image_name = f"content/{filename}/samples.jpg"
     if not os.path.exists(image_name):
         return
     im = Image.open(image_name)
     thumb = im.crop((0,0,256,256))
     thumb = thumb.resize((128,128))
-    thumb.save(f"images/thumbs/{filename}.jpg")
+    thumb.save(f"content/{filename}/thumbnail.jpg")
 
 model_file = "models.json"
 output_file = "README.md"
