@@ -204,6 +204,7 @@ def main(selected=None):
                 run_style_mixing(model_location, temp_outputs, resolution)
                 filename = Path(temp_outputs)/"00000-style-mixing-example/grid.png"
                 im = Image.open(filename)
+                im.resize((5*256, 5*256))
                 im.save(mixing_name)
                 clean_up(temp_outputs)
             else:
