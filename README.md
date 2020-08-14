@@ -33,6 +33,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](content/fursona/thumbnail.jpg)](#fursona)
 [![](content/my%20little%20pony/thumbnail.jpg)](#my-little-pony)
 [![](content/painting%20faces/thumbnail.jpg)](#painting-faces)
+[![](content/ukiyoe%20faces/thumbnail.jpg)](#ukiyoe-faces)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -68,6 +69,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [fursona](#fursona)
     - [my little pony](#my-little-pony)
     - [painting faces](#painting-faces)
+    - [ukiyoe faces](#ukiyoe-faces)
 - [Notes](#notes)
 - [Contributing](#contributing)
 
@@ -145,10 +147,10 @@ If you have a publically accessible model which you know of, or would like to sh
 - Resolution: 256x256 config: e
 - Author: [Justin Pinkney](http://justinpinkney.com/)
 - [Download link](https://drive.google.com/uc?id=1BUL-RIzXC7Bpnz2cn230CbA4eT7_Etp0)
-- StyleGAN2 implementation: https://github.com/justinpinkney/awesome-pretrained-stylegan2/issues/2
+- StyleGAN2 implementation: https://github.com/justinpinkney/stylegan2
 - Notes: Trained to FID 11.2 from scratch for 3810 kimg
 - Licence: CC BY-NC-SA 4.0
-- [Source](https://github.com/justinpinkney/stylegan2)
+- [Source](https://github.com/justinpinkney/awesome-pretrained-stylegan2/issues/2)
 
 
 ## faces (FFHQ config-f)
@@ -449,11 +451,26 @@ If you have a publically accessible model which you know of, or would like to sh
 - [Source](https://twitter.com/ak92501/status/1282466682267676675?s=20)
 
 
+## ukiyoe faces
+
+![](content/ukiyoe%20faces/samples.jpg)
+- [Style mixing example](content/ukiyoe%20faces/mixing.jpg), [interpolation video](content/ukiyoe%20faces/interpolation.mp4)
+- Dataset: 5000 faces aligned and detected from ukiyoe images
+- Resolution: 256x256 config: slim
+- Author: [Justin Pinkney](https://www.justinpinkney.com)
+- [Download link](https://drive.google.com/uc?id=1_QysUKfed1-_x9e5off2WWJKp1yUcidu)
+- StyleGAN2 implementation: https://github.com/justinpinkney/data-efficient-gans/
+- Notes: Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.74
+- Licence: CC BY-NC-SA 4.0
+- [Source]()
+
+
 
 ## Notes
 
 - The configuration "slim" refers to the reduced feature map model used in the Karras limited data and Zhao data efficient papers.
 - Each row in the sample grids above use a different level of trunction: 0.25, 0.5, 0.75, 1 from top to bottom.
+- Style mixing figure and interpolation video generated using truncation of 0.75
 
 ## Contributing
 
