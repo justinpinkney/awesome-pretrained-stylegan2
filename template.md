@@ -37,6 +37,7 @@ If you have a publically accessible model which you know of, or would like to sh
 
 - The configuration "slim" refers to the reduced feature map model used in the Karras limited data and Zhao data efficient papers.
 - Each row in the sample grids above use a different level of trunction: 0.25, 0.5, 0.75, 1 from top to bottom.
+- Style mixing figure and interpolation video generated using truncation of 0.75
 
 ## Contributing
 
