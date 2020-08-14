@@ -49,13 +49,13 @@ def run_in_container(cmd_to_run):
     subprocess.run(base)
 
 
-def run_network(pkl_path, output_dir):
-    seeds = '0-11'
+def run_network(pkl_path, output_dir, start_seed=0, end_seed=11, truncation=0.75):
+    seeds = f"{start_seed}-{end_seed}"
     cmd = ['python', 'run_generator.py', 
         'generate-images',
         '--network', working_dir + '/' + str(pkl_path),
         '--seeds', seeds,
-        '--truncation-psi', truncation,
+        '--truncation-psi', str(truncation),
         '--result-dir', working_dir + '/' + str(output_dir),
             ]
     run_in_container(cmd)
@@ -150,8 +150,9 @@ def draw_figure(results_dir, filename, rows=4, cols=3, out_size=256):
     
     canvas = Image.new('RGB', (out_size * cols, out_size*rows), 'white')
     images = Path(results_dir).rglob('*.png')
-    for col in range(cols):
-        for row in range(rows):
+    images = iter(sorted(images))
+    for row in range(rows):
+        for col in range(cols):
             image = Image.open(next(images))
             image = image.resize((out_size, out_size), Image.ANTIALIAS)
             canvas.paste(image, (out_size*col, out_size*row))
@@ -185,8 +186,11 @@ def main(selected=None):
 
             resolution = parse_resolution(model["resolution"])
                 
-            if not os.path.exists(image_name):    
-                run_network(model_location, temp_outputs)
+            if not os.path.exists(image_name):
+                for idx, trunc in enumerate((0.25, 0.5, 0.75, 1)):
+                    run_network(model_location, temp_outputs, 
+                                start_seed=0+idx*3, end_seed=2+idx*3, 
+                                truncation=trunc)
                 draw_figure(temp_outputs, image_name)
                 generated_resolution = check_resolution(temp_outputs)
                 print(f"Found resolution {generated_resolution}")

@@ -14,6 +14,7 @@ If you have a publically accessible model which you know of, or would like to sh
 - Models
 {% for model in models %}
     - [{{ model.name }}](#{{ model.name | replace(" ", "-") | replace("(", "")  | replace(")", "") }}){% endfor %}
+- [Notes](#notes)
 - [Contributing](#contributing)
 
 {% for model in models %}
@@ -31,6 +32,11 @@ If you have a publically accessible model which you know of, or would like to sh
 - [Source]({{ model.source_url }})
 
 {% endfor %}
+
+## Notes
+
+- The configuration "slim" refers to the reduced feature map model used in the Karras limited data and Zhao data efficient papers.
+- Each row in the sample grids above use a different level of trunction: 0.25, 0.5, 0.75, 1 from top to bottom.
 
 ## Contributing
 
