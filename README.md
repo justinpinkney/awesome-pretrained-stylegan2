@@ -34,6 +34,8 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](content/my%20little%20pony/thumbnail.jpg)](#my-little-pony)
 [![](content/painting%20faces/thumbnail.jpg)](#painting-faces)
 [![](content/ukiyoe%20faces/thumbnail.jpg)](#ukiyoe-faces)
+[![](content/beetles/thumbnail.jpg)](#beetles)
+[![](content/textures/thumbnail.jpg)](#textures)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -70,6 +72,8 @@ If you have a publically accessible model which you know of, or would like to sh
     - [my little pony](#my-little-pony)
     - [painting faces](#painting-faces)
     - [ukiyoe faces](#ukiyoe-faces)
+    - [beetles](#beetles)
+    - [textures](#textures)
 - [Notes](#notes)
 - [Contributing](#contributing)
 
@@ -463,6 +467,32 @@ If you have a publically accessible model which you know of, or would like to sh
 - Notes: Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.74
 - Licence: CC BY-NC-SA 4.0
 - [Source]()
+
+
+## beetles
+
+![](content/beetles/samples.jpg)
+- [Style mixing example](content/beetles/mixing.jpg), [interpolation video](content/beetles/interpolation.mp4)
+- Dataset: Biologia Centrali-Americana :zoology, botany and archaeology
+- Resolution: 1024x1024 config: f
+- Author: [Bernat Cuni](https://www.cunicode.com)
+- [Download link](https://drive.google.com/uc?id=1BOluDQSMzKLgJ3tipAD3tfq5p6AEv_-C)
+- StyleGAN2 implementation: Unknown
+- Licence: Unknown
+- [Source](https://www.cunicode.com/works/confusing-coleopterists)
+
+
+## textures
+
+![](content/textures/samples.jpg)
+- [Style mixing example](content/textures/mixing.jpg), [interpolation video](content/textures/interpolation.mp4)
+- Dataset: Describable Textures Dataset (DTD)
+- Resolution: 1024x1024 config: f
+- Author: [Bernat Cuni](https://www.cunicode.com)
+- [Download link](https://drive.google.com/uc?id=18SoDjbEfZ5kE28mgHlja2E6u2gnzFyaS)
+- StyleGAN2 implementation: Unknown
+- Licence: Unknown
+- [Source](https://www.cunicode.com/works/deep-textures)
 
 
 

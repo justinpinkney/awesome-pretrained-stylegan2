@@ -375,5 +375,31 @@
     "license": "CC BY-NC-SA 4.0",
     "implementation": "https://github.com/justinpinkney/data-efficient-gans/",
     "Notes": "Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.74"
+  },
+  {
+    "name": "beetles",
+    "download_url": "https://drive.google.com/uc?id=1BOluDQSMzKLgJ3tipAD3tfq5p6AEv_-C",
+    "author": "Bernat Cuni",
+    "author_url": "https://www.cunicode.com",
+    "dataset": "Biologia Centrali-Americana :zoology, botany and archaeology",
+    "source_url": "https://www.cunicode.com/works/confusing-coleopterists",
+    "resolution": "1024x1024",
+    "config": "f",
+    "license": "Unknown",
+    "implementation": "Unknown",
+    "Notes": ""
+  },
+  {
+    "name": "textures",
+    "download_url": "https://drive.google.com/uc?id=18SoDjbEfZ5kE28mgHlja2E6u2gnzFyaS",
+    "author": "Bernat Cuni",
+    "author_url": "https://www.cunicode.com",
+    "dataset": "Describable Textures Dataset (DTD)",
+    "source_url": "https://www.cunicode.com/works/deep-textures",
+    "resolution": "1024x1024",
+    "config": "f",
+    "license": "Unknown",
+    "implementation": "Unknown",
+    "Notes": ""
   }
 ]
