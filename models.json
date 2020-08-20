@@ -401,5 +401,18 @@
     "license": "Unknown",
     "implementation": "Unknown",
     "Notes": ""
+  },
+  {
+    "name": "more abstract art",
+    "download_url": "https://drive.google.com/uc?id=1wSTYii46Q4dqp70iDCFApQOQIfl5q4EL",
+    "author": "Nick Saraev",
+    "author_url": "https://twitter.com/NickSaraev",
+    "dataset": "14,305 abstract paintings",
+    "source_url": "https://1secondpainting.com/",
+    "resolution": "512x512",
+    "config": "f",
+    "license": "Unknown",
+    "implementation": "Unknown",
+    "Notes": "Fine tuned from FFHQ 512 model"
   }
 ]
