@@ -414,5 +414,20 @@
     "license": "Unknown",
     "implementation": "Unknown",
     "Notes": "Fine tuned from FFHQ 512 model"
+  },
+  {
+    "name": "flowers",
+    "download_url": "https://drive.google.com/uc?id=13onBTt6xVwKmYTRCFbONBTbSXFqeiVcK",
+    "author": "Justin Pinkney",
+    "author_url": "https://www.justinpinkney.com",
+    "dataset": "Oxford flowers 102 prepped with u^2net",
+    "source_url": "",
+    "resolution": "256x256",
+    "config": "slim",
+    "license": "CC BY-NC-SA 4.0",
+    "implementation": "https://github.com/justinpinkney/data-efficient-gans/",
+    "Notes": "Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.20"
   }
 ]
+
+

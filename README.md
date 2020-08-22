@@ -37,6 +37,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](content/beetles/thumbnail.jpg)](#beetles)
 [![](content/textures/thumbnail.jpg)](#textures)
 [![](content/more%20abstract%20art/thumbnail.jpg)](#more-abstract-art)
+[![](content/flowers/thumbnail.jpg)](#flowers)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -76,6 +77,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [beetles](#beetles)
     - [textures](#textures)
     - [more abstract art](#more-abstract-art)
+    - [flowers](#flowers)
 - [Notes](#notes)
 - [Contributing](#contributing)
 
@@ -509,6 +511,20 @@ If you have a publically accessible model which you know of, or would like to sh
 - Notes: Fine tuned from FFHQ 512 model
 - Licence: Unknown
 - [Source](https://1secondpainting.com/)
+
+
+## flowers
+
+![](content/flowers/samples.jpg)
+- [Style mixing example](content/flowers/mixing.jpg), [interpolation video](content/flowers/interpolation.mp4)
+- Dataset: Oxford flowers 102 prepped with u^2net
+- Resolution: 256x256 config: slim
+- Author: [Justin Pinkney](https://www.justinpinkney.com)
+- [Download link](https://drive.google.com/uc?id=13onBTt6xVwKmYTRCFbONBTbSXFqeiVcK)
+- StyleGAN2 implementation: https://github.com/justinpinkney/data-efficient-gans/
+- Notes: Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.20
+- Licence: CC BY-NC-SA 4.0
+- [Source]()
 
 
 
