@@ -38,6 +38,7 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](content/textures/thumbnail.jpg)](#textures)
 [![](content/more%20abstract%20art/thumbnail.jpg)](#more-abstract-art)
 [![](content/flowers/thumbnail.jpg)](#flowers)
+[![](content/Doors/thumbnail.jpg)](#Doors)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -78,6 +79,7 @@ If you have a publically accessible model which you know of, or would like to sh
     - [textures](#textures)
     - [more abstract art](#more-abstract-art)
     - [flowers](#flowers)
+    - [Doors](#Doors)
 - [Notes](#notes)
 - [Contributing](#contributing)
 
@@ -525,6 +527,20 @@ If you have a publically accessible model which you know of, or would like to sh
 - Notes: Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.20
 - Licence: CC BY-NC-SA 4.0
 - [Source]()
+
+
+## Doors
+
+![](content/Doors/samples.jpg)
+- [Style mixing example](content/Doors/mixing.jpg), [interpolation video](content/Doors/interpolation.mp4)
+- Dataset: 5k architectural elements from Barcelona
+- Resolution: 256x256 config: f
+- Author: [Vasily Korf](https://vasilykorf.com)
+- [Download link](https://yadi.sk/d/uwq4vaYPkqNuvQ?ncrnd=436)
+- StyleGAN2 implementation: https://github.com/NVlabs/stylegan2
+- Notes: styleGAN trained on architectural elements to create Art Nouveau doors
+- Licence: Unknown
+- [Source](https://vasilykorf.com/doors-stylegan/)
 
 
 
