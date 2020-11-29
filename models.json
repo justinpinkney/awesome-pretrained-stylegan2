@@ -427,6 +427,19 @@
     "license": "CC BY-NC-SA 4.0",
     "implementation": "https://github.com/justinpinkney/data-efficient-gans/",
     "Notes": "Fine tuned from ffhq-256-slim, used DiffAugment for training, FID = 12.20"
+  },
+    {
+    "name": "Doors",
+    "download_url": "https://yadi.sk/d/uwq4vaYPkqNuvQ?ncrnd=436",
+    "author": "Vasily Korf",
+    "author_url": "https://vasilykorf.com",
+    "dataset": "5k architectural elements from Barcelona",
+    "source_url": "https://vasilykorf.com/doors-stylegan/",
+    "resolution": "256x256",
+    "config": "f",
+    "license": "Unknown",
+    "implementation": "https://github.com/NVlabs/stylegan2",
+    "Notes": "styleGAN trained on architectural elements to create Art Nouveau doors"
   }
 ]
 
