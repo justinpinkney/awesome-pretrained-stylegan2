@@ -39,6 +39,8 @@ _See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) f
 [![](content/more%20abstract%20art/thumbnail.jpg)](#more-abstract-art)
 [![](content/flowers/thumbnail.jpg)](#flowers)
 [![](content/Doors/thumbnail.jpg)](#Doors)
+[![](content/floor%20plans/thumbnail.jpg)](#floor-plans)
+[![](content/figure%20drawings/thumbnail.jpg)](#figure-drawings)
 
 If you have a publically accessible model which you know of, or would like to share please see the [contributing](#contributing) section. _Hint: the simplest way to submit a model is to fill in this [form](https://forms.gle/PE1iiTa5tNTdBFYN9)._
 
@@ -80,6 +82,8 @@ If you have a publically accessible model which you know of, or would like to sh
     - [more abstract art](#more-abstract-art)
     - [flowers](#flowers)
     - [Doors](#Doors)
+    - [floor plans](#floor-plans)
+    - [figure drawings](#figure-drawings)
 - [Notes](#notes)
 - [Contributing](#contributing)
 
@@ -541,6 +545,32 @@ If you have a publically accessible model which you know of, or would like to sh
 - Notes: styleGAN trained on architectural elements to create Art Nouveau doors
 - Licence: Unknown
 - [Source](https://vasilykorf.com/doors-stylegan/)
+
+
+## floor plans
+
+![](content/floor%20plans/samples.jpg)
+- [Style mixing example](content/floor%20plans/mixing.jpg), [interpolation video](content/floor%20plans/interpolation.mp4)
+- Dataset: Floor Plans (Instagram scrapped)
+- Resolution: 1024x1024 config: a
+- Author: [Mayur Mistry](https://twitter.com/mistrymm7)
+- [Download link](https://drive.google.com/uc?id=16bd6n1NM7EVWT7kh_O-jAHkNnUrHG1wX)
+- StyleGAN2 implementation: https://github.com/NVlabs/stylegan
+- Licence: Unknown
+- [Source](https://www.youtube.com/watch?v=IxjlJ0FEz2o&t=2s)
+
+
+## figure drawings
+
+![](content/figure%20drawings/samples.jpg)
+- [Style mixing example](content/figure%20drawings/mixing.jpg), [interpolation video](content/figure%20drawings/interpolation.mp4)
+- Dataset: Previous models made from the drawings from my blog
+- Resolution: 1024x1024 config: f
+- Author: [Krrrl](http://krrrl.blogspot.com/)
+- [Download link](https://drive.google.com/uc?id=1oLjZ6DX3ulagUXfUPYp2vw0yNij7ZE1a)
+- StyleGAN2 implementation: Runway ML
+- Licence: Unknown
+- [Source](http://krrrl.blogspot.com/2020/08/runway-ml-3rd-model-based-on-long-poses.html)
 
 
 
