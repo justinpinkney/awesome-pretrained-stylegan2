@@ -440,6 +440,32 @@
     "license": "Unknown",
     "implementation": "https://github.com/NVlabs/stylegan2",
     "Notes": "styleGAN trained on architectural elements to create Art Nouveau doors"
+  },
+  {
+    "name": "floor plans",
+    "download_url": "https://drive.google.com/uc?id=16bd6n1NM7EVWT7kh_O-jAHkNnUrHG1wX",
+    "author": "Mayur Mistry",
+    "author_url": "https://twitter.com/mistrymm7",
+    "dataset": "Floor Plans (Instagram scrapped)",
+    "source_url": "https://www.youtube.com/watch?v=IxjlJ0FEz2o&t=2s",
+    "resolution": "1024x1024",
+    "config": "a",
+    "license": "Unknown",
+    "implementation": "https://github.com/NVlabs/stylegan",
+    "Notes": ""
+  },
+  {
+    "name": "figure drawings",
+    "download_url": "https://drive.google.com/uc?id=1oLjZ6DX3ulagUXfUPYp2vw0yNij7ZE1a",
+    "author": "Krrrl",
+    "author_url": "http://krrrl.blogspot.com/",
+    "dataset": "Previous models made from the drawings from my blog",
+    "source_url": "http://krrrl.blogspot.com/2020/08/runway-ml-3rd-model-based-on-long-poses.html",
+    "resolution": "1024x1024",
+    "config": "f",
+    "license": "Unknown",
+    "implementation": "Runway ML",
+    "Notes": ""
   }
 ]
 
