@@ -466,6 +466,18 @@
     "license": "Unknown",
     "implementation": "Runway ML",
     "Notes": ""
+  },
+  {
+    "name": "SneakGAN",
+    "download_url": "https://drive.google.com/u/0/uc?id=1qe8PteWsfWpR5UyQOyjW8EYuanrXiJru",
+    "author": "Vilagamer999",
+    "author_url": "https://vilagamer999.github.io/",
+    "dataset": "https://github.com/98mprice/sneaker-generator/tree/master/dataset",
+    "resolution": "256x256",
+    "config": "f",
+    "license": "None",
+    "implementation": "https://github.com/NVlabs/stylegan2",
+    "Notes": "Trained StyleGAN2 model using the dataset from the StyleGAN sneaker generator model"
   }
 ]
 
