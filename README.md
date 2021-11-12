@@ -1,8 +1,11 @@
 # Awesome Pretrained StyleGAN2
 
-A collection of pre-trained [StyleGAN2](https://github.com/NVlabs/stylegan2) models trained on different datasets at different resolution.
+A collection of pre-trained [StyleGAN2](https://github.com/NVlabs/stylegan2) models trained on different datasets at different resolution. 
 
-_See [this repo](https://github.com/justinpinkney/awesome-pretrained-stylegan) for pretrained models for StyleGAN 1_
+_Note the readme is a bit out of date, there are more models linked in the [issues](https://github.com/justinpinkney/awesome-pretrained-stylegan2/issues)._
+
+- **For StyleGAN3 models see: https://github.com/justinpinkney/awesome-pretrained-stylegan3**
+- **For StyleGAN1 models see: https://github.com/justinpinkney/awesome-pretrained-stylegan)**
 
 
 [![](content/car%20(config-e)/thumbnail.jpg)](#car-config-e)
