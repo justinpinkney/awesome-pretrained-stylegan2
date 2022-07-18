@@ -1,0 +1,13 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Awesome pretrained StyleGAN2
+message: >-
+  If you use this repository, please cite it as
+  below.
+type: dataset
+authors:
+  - given-names: Justin N. M.
+    email: justinpinkney@gmail.com
+    family-names: Pinkney
